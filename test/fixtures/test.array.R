@@ -2,7 +2,7 @@ options( digits = 16 );
 library( jsonlite );
 
 
-v = 1
+v = 8
 x = seq( -1000, 1000, 0.5 )
 y = dt( x, v )
 

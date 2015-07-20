@@ -2,7 +2,7 @@ options( digits = 16 );
 library( jsonlite );
 
 
-v = 1
+v = 6
 x = c( -5, -2.5, 0, 2.5, 5 )
 y = dt( x, v )
 

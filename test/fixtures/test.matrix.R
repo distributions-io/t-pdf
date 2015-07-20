@@ -1,7 +1,7 @@
 options( digits = 16 );
 library( jsonlite );
 
-v = 1
+v = 2.8
 x = 0:24
 y = dt( x, v )
 
