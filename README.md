@@ -7,7 +7,7 @@ Probability Density Function
 The [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) (PDF) for a [Student t](https://en.wikipedia.org/wiki/Student t_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="" data-equation="eq:pdf_function">
-	<img src="" alt="Probability density function (PDF) for a Student t distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/t-pdf/b8398f66f537b070b2c6f195608ab23ecab1bbd9/docs/img/eqn.svg" alt="Probability density function (PDF) for a Student t distribution.">
 	<br>
 </div>
 
@@ -40,18 +40,18 @@ var matrix = require( 'dstructs-matrix' ),
 	i;
 
 out = pdf( 1 );
-// returns
+// returns ~0.159
 
 out = pdf( -1 );
-// returns 0
+// returns ~0.159
 
 x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 out = pdf( x );
-// returns [...]
+// returns [ ~0.318, ~0.255, ~0.159, ~0.0979, ~0.0637, ~0.0439 ]
 
 x = new Int8Array( x );
 out = pdf( x );
-// returns Float64Array( [...] )
+// returns Float64Array( [~0.318,0.318,~0.159,~0.159,~0.0637,~0.0637] )
 
 x = new Float32Array( 6 );
 for ( i = 0; i < 6; i++ ) {
@@ -66,9 +66,9 @@ mat = matrix( x, [3,2], 'float32' );
 
 out = pdf( mat );
 /*
-	[
-
-	   ]
+	[ ~0.318  ~0.255
+	  ~0.159  ~0.0979
+	  ~0.0637 ~0.0439 ]
 */
 ```
 
@@ -89,7 +89,7 @@ var x = [ 0, 0.5, 1, 1.5, 2, 2.5 ];
 var out = pdf( x, {
 	'v': 6,
 });
-// returns [...]
+// returns [ ~0.383, ~0.332, ~0.223, ~0.126, ~0.064, ~0.0315 ]
 ```
 
 For non-numeric `arrays`, provide an accessor `function` for accessing `array` values.
@@ -111,7 +111,7 @@ function getValue( d, i ) {
 var out = pdf( data, {
 	'accessor': getValue
 });
-// returns [...]
+// returns [ ~0.318, ~0.255, ~0.159, ~0.0979, ~0.0637, ~0.0439 ]
 ```
 
 
@@ -133,12 +133,12 @@ var out = pdf( data, {
 });
 /*
 	[
-		{'x':[0,]},
-		{'x':[1,]},
-		{'x':[2,]},
-		{'x':[3,]},
-		{'x':[4,]},
-		{'x':[5,]}
+		{'x':[0,~0.318]},
+		{'x':[1,~0.255]},
+		{'x':[2,~0.159]},
+		{'x':[3,~0.0979]},
+		{'x':[4,~0.0637]},
+		{'x':[5,~0.0439]}
 	]
 */
 
@@ -156,13 +156,13 @@ x = new Int8Array( [0,1,2,3,4] );
 out = pdf( x, {
 	'dtype': 'int32'
 });
-// returns Int32Array( [...] )
+// returns Int32Array( [0,0,0,0,0] )
 
 // Works for plain arrays, as well...
 out = pdf( [0,0.5,1,1.5,2], {
 	'dtype': 'uint8'
 });
-// returns Uint8Array( [...] )
+// returns Uint8Array( [0,0,0,0,0] )
 ```
 
 By default, the function returns a new data structure. To mutate the input data structure (e.g., when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
@@ -179,7 +179,7 @@ x = [ 0, 0.5, 1, 1.5, 2 ];
 out = pdf( x, {
 	'copy': false
 });
-// returns [...]
+// returns [ ~0.318, ~0.255, ~0.159, ~0.0979, ~0.0637, ~0.0439 ]
 
 bool = ( x === out );
 // returns true
@@ -199,9 +199,9 @@ out = pdf( mat, {
 	'copy': false
 });
 /*
-	[
-
-	   ]
+	[ ~0.318  ~0.255
+	  ~0.159  ~0.0979
+	  ~0.0637 ~0.0439 ]
 */
 
 bool = ( mat === out );
