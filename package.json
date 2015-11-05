@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "compute-array-constructors": "^1.0.0",
-    "compute-beta": "git+https://github.com/compute-io/beta.git",
+    "compute-beta": "git+https://github.com/compute-io/beta.git#refactor",
     "dstructs-matrix": "^2.0.0",
     "utils-deep-get": "^1.0.0",
     "utils-deep-set": "^1.0.1",
