@@ -1,7 +1,7 @@
 {
   "name": "distributions-t-pdf",
   "version": "0.0.0",
-  "description": "Student t distribution probability density function (PDF)",
+  "description": "Student's t distribution probability density function (PDF)",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "compute-array-constructors": "^1.0.0",
+    "compute-beta": "git+https://github.com/compute-io/beta.git",
     "dstructs-matrix": "^2.0.0",
     "utils-deep-get": "^1.0.0",
     "utils-deep-set": "^1.0.1",
@@ -57,7 +58,7 @@
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
     "jshint-stylish": "2.x.x",
-	"validate.io-finite": "^1.0.0"
+    "validate.io-finite": "^1.0.0"
   },
   "license": "MIT"
 }
